@@ -57,8 +57,10 @@ function calculopromo(total,nropromo) {
 
 function verpedido(producto,cantidad,costo){
     for (let index = 0; index < producto.length; index++) {
-        alert(`Producto: ${producto[index]} Cantidad: ${cantidad[index]} Precio: $${costo[index]}\n`);
+//      alert(`Producto: ${producto[index]} Cantidad: ${cantidad[index]} Precio: $${costo[index]}\n`);
+        listadopedido += "Producto: "+producto[index]+" Cantidad: "+cantidad[index]+" Precio: $"+costo[index]+"\n";
     }
+    return listadopedido;
 }
 
 
@@ -76,6 +78,8 @@ let totalpedido = 0;
 let promo =false;
 let nropromo = 0;
 let total=0;
+let listadopedido ='';
+let pedidofinal='';
 
 let opcion = parseInt(prompt("Elija una de las siguientes funciones \n 1- Agregar producto al pedido \n 2- Calcular Subtotal Compra \n 3- Calcular Promoción \n 4- Ver pedido actual \n 0- Finalizar Pedido"));
 // alert(`Cant ${nroart}`);
@@ -106,7 +110,8 @@ while (opcion != 0) {
             promo=true;
             break;
         case 4:
-            verpedido(pedidoproducto,pedidocantidad,pedidocosto);
+            listadopedido=verpedido(pedidoproducto,pedidocantidad,pedidocosto);
+            alert(listadopedido);
             break;
         default:
             break;
@@ -116,9 +121,13 @@ while (opcion != 0) {
 }
 totalpedido = calculototal();
 if (promo & total > 0){
-    alert(`Valor del pedido con promoción es $ ${total}`);
+    listadopedido=verpedido(pedidoproducto,pedidocantidad,pedidocosto);
+    pedidofinal=listadopedido+"Valor del pedido con promoción es $ "+total;
+    alert(pedidofinal);
 } else if (totalpedido > 0) {
-    alert(`Valor del pedido es $ ${totalpedido}`);
+    listadopedido=verpedido(pedidoproducto,pedidocantidad,pedidocosto);
+    pedidofinal=listadopedido+"Valor del pedido es $ "+totalpedido;
+    alert(pedidofinal);
 } else {
     alert(`No hizo ningún pedido`);
 }
