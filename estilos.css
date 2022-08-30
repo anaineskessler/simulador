@@ -1,0 +1,52 @@
+header h1 {
+    text-align:center;
+    color:#ff8000;
+}
+
+header h2 {
+    text-align:center;
+    color: #ff8000;
+}
+
+a {
+    text-decoration: none;
+}
+
+nav {
+    padding:0.2%;
+    margin-top: 0.5%;
+}
+
+nav ul {
+    list-style-type:none;
+    padding:0px;
+    width: 100%;
+    display: table;
+    text-align: center;
+}
+nav ul li {
+    display: inline;
+}
+
+nav ul li:hover {
+    background-color: #ff8000;
+    color: #000000;
+    text-decoration: underline;
+}
+
+nav ul li a {
+    display:inline-block;
+    text-align:center;
+    text-decoration:none;
+    font-size: 14px;
+    color: #ffffff;
+    font-weight: bold;
+    padding:6px 15px;
+    margin:4px;
+    background:#ff8000;
+    
+}
+
+.img_logo {
+    width: 100vw;
+}
